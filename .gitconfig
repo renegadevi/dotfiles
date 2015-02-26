@@ -1,1 +1,10 @@
-/home/renegadevi/.gitconfig
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+	user = RenegadeVI
+	email = renegadevi@codeofmagi.net
+[push]
+	default = simple
+[user]
+	name = RenegadeVI
+	email = renegadevi@codeofmagi.net
