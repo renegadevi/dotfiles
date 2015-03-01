@@ -350,9 +350,9 @@ set showtabline=2
 " closed. Higer number will close fewer folds. Settings this option to zero
 " will close all folds.
 "
-set foldmethod=syntax
-set foldnestmax=5
-set foldlevel=1
+"set foldmethod=syntax
+"set foldnestmax=5
+"set foldlevel=1
 
 
 " Mouse support
@@ -408,6 +408,7 @@ set title
 set t_Co=256
 set background=dark
 colorscheme lucius
+LuciusBlack
 
 
 " History
