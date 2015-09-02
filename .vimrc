@@ -289,12 +289,17 @@ set hlsearch
 " invoke an Ex command or to invoke a Vim function or to invoke external
 " commands. Using key maps you can define your own Vim commands.
 "
-" Shown below is keymapping for file tabs:
+" Shown below is keymapping:
 "
 map <C-i> :tabnext<CR>
 map <C-tab> :tabnext<CR>
 map <C-t> :tabnew<CR>
 map <C-w> :tabclose<CR>
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
 map <F12> :NERDTreeToggle<CR>
 
