@@ -501,8 +501,8 @@ hi ColorColumn  guifg=NONE
 hi Pmenu        guifg=bg
 hi PmenuSel     guifg=fg
 hi PmenuThumb   guifg=fg
-hi StatusLine   guifg=bg
-hi TabLine      guifg=bg
+hi StatusLine   guifg=#dadada
+hi TabLine      guifg=#dadada
 hi TabLineSel   guifg=fg
 hi WildMenu     guifg=fg
 if s:style == "light"
@@ -545,7 +545,7 @@ if s:style == "light"
         hi VertSplit                    guibg=#808080
     endif
 else
-    hi ColorColumn                  guibg=#3a3a3a
+    hi ColorColumn                  guibg=#303030
     hi CursorLineNr guifg=#9e9e9e   guibg=#444444
     hi FoldColumn                   guibg=#4e4e4e
     hi Folded                       guibg=#4e4e4e
@@ -585,16 +585,16 @@ else
     else
         hi FoldColumn   guifg=#bcbcbc
         hi Folded       guifg=#bcbcbc
-        hi Pmenu                        guibg=#b2b2b2
+        hi Pmenu                        guibg=#444444
         hi PmenuSbar    guifg=#b2b2b2   guibg=#d0d0d0
         hi PmenuThumb                   guibg=#808080
         hi SignColumn   guifg=#b2b2b2
-        hi StatusLine                   guibg=#b2b2b2
-        hi StatusLineNC                 guibg=#b2b2b2
-        hi TabLine                      guibg=#b2b2b2
-        hi TabLineFill                  guibg=#b2b2b2
+        hi StatusLine                   guibg=#444444
+        hi StatusLineNC                 guibg=#444444
+        hi TabLine                      guibg=#444444
+        hi TabLineFill                  guibg=#444444
         hi TabLineSel                   guibg=#005f87
-        hi VertSplit                    guibg=#b2b2b2
+        hi VertSplit                    guibg=#444444
     endif
 endif
 
