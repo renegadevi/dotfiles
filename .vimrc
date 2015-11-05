@@ -173,7 +173,7 @@ set smartindent
 " maximum width of text being inserted, when at sero value, it's disabled.
 "
 set nowrap
-set textwidth=0
+set textwidth=80
 
 
 " Color column
@@ -182,7 +182,7 @@ set textwidth=0
 " align text and easy look at strict document width. Note: It will make
 " redrawing screen slower.
 "
-set colorcolumn=80
+set colorcolumn=81
 
 
 " Show matching bracket
