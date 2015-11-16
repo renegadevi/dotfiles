@@ -11,7 +11,7 @@ ZSH_THEME="terminalparty-modified"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github python)
+plugins=(git github python zsh-syntax-highlighting)
 
 # User configuration
 export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:$HOME/bin"
@@ -35,4 +35,4 @@ alias vi='vim'
 
 if [ "$TMUX" != "" ]; then tmux; fi
 
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
