@@ -10,7 +10,6 @@
 " File:     .vimrc
 " Author:   renegadeVI <renegadevi@codeofmagi.net>
 " Version:  1.1.0
-" Updated:  2015-02-26
 "
 
 
