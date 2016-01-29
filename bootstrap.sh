@@ -8,6 +8,7 @@ Note to ny self:
 # Get user input
 echo -e "Github username: \c"; read username
 echo -e "Symlink dotfiles to home folder? (y/n) \c"; read symlink
+echo -e "Install zsh-syntax-highlighting? (y/n) \c"; read syntax
 
 # Backup pre-existing ~/dotfiles
 if [ -d ~/dotfiles ]; then
@@ -30,4 +31,9 @@ if [ $symlink == y ]; then
             echo "$f ->  ~/$NAME"
         fi
     done
+fi
+
+# Install zsh-syntax-highlighting?
+if [ $syntax == y ]; then
+    echo `git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
 fi
