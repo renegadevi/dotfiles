@@ -24,10 +24,10 @@ echo `git clone https://github.com/$username/dotfiles.git ~/dotfiles -q`
 if [ $symlink == y ]; then
     echo ".. Creating symlinks"
     for f in ~/dotfiles/.* ; do
- 		    NAME=`basename $f`
- 		    if ! [ $NAME == '..' ] && ! [ $NAME == '.' ]; then
-             echo `ln -sf $f ~/$NAME`
-             echo "$f ->  ~/$NAME"
- 		    fi
+        NAME=`basename $f`
+        if ! [ $NAME == '..' ] && ! [ $NAME == '.' ]; then
+            echo `ln -sf $f ~/$NAME`
+            echo "$f ->  ~/$NAME"
+        fi
     done
 fi
