@@ -35,4 +35,4 @@ alias vi='vim'
 
 if [ "$TMUX" != "" ]; then tmux; fi
 
-#source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
