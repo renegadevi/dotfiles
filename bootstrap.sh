@@ -18,7 +18,7 @@ fi
 
 # Receive dotfiles from Github
 echo ".. Cloning dotfiles to ~/dotfiles"
-echo `git clone https://github.com/$username/dotfiles.git ~/dotfiles -q`
+echo `git clone --recursive https://github.com/$username/dotfiles.git ~/dotfiles -q`
 
 # Create symlinks
 if [ $symlink == y ]; then
