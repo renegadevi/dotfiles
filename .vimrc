@@ -6,14 +6,9 @@
 " suggestions or corrections is highly appriciated.
 "
 " File:     .vimrc
-<<<<<<< cd8134a04e584bafea08b51d021e239118352a26
-" Author:   renegadeVI <renegadevi@codeofmagi.net>
-" Version:  1.1.0
-=======
 " Author:   renegadevi <philip.andersen@codeofmagi.net>
 " Version:  2.0.0
 " Updated:  2016-08-02
->>>>>>> Complete upgrade to v2.0.0
 "
 
 
