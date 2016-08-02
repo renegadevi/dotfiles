@@ -1,0 +1,9 @@
+# Ignore MacOS
+.DS_Store
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+.gitconfig
+
+
