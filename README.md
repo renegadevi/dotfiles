@@ -2,8 +2,8 @@
 Dotfiles for my nix/unix-computers
 
 ## Screenshots
-![Screenshot1](https://raw.githubusercontent.com/renegadevi/dotfiles/master/Screenshots/Screenshot_01.png)
-![Screenshot2](https://raw.githubusercontent.com/renegadevi/dotfiles/master/Screenshots/Screenshot_02.png)
+![Screenshot1](https://raw.githubusercontent.com/renegadevi/dotfiles/master/Screenshot_01.png)
+![Screenshot2](https://raw.githubusercontent.com/renegadevi/dotfiles/master/Screenshot_02.png)
 
 ## Screenshot details
 
