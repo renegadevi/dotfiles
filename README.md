@@ -1,5 +1,5 @@
 # Dotfiles
-Dotfiles for my UNIX/\*NIX-computers
+Dotfiles for my nix/unix-computers
 
 ## Screenshots
 ![Screenshot1](https://raw.githubusercontent.com/renegadevi/dotfiles/master/Screenshots/Screenshot_01.png)
