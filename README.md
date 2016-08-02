@@ -20,10 +20,11 @@ Dotfiles for my nix/unix-computers
 - Background: #2A2D35
 - Text color: #FFFFFF
 
-#### ANSI Colours
+#### ANSI Colors
 
-| Black   | #000000 | #707070 |
+| Color   | Normal  | Bright  |
 |---------|---------|---------|
+| Black   | #000000 | #707070 |
 | Red     | #d16f56 | #e6aaa1 |
 | Green   | #9fbe25 | #d6f065 |
 | Yellow  | #d9bd2d | #ffe87b |
