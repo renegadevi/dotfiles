@@ -7,8 +7,8 @@
 "
 " File:     .vimrc
 " Author:   renegadevi <philip.andersen@codeofmagi.net>
-" Version:  2.0.0
-" Updated:  2016-08-02
+" Version:  2.0.1
+" Updated:  2016-08-06
 "
 
 
@@ -486,6 +486,20 @@ set confirm
 set noerrorbells
 set novisualbell
 set t_vb=
+
+
+" Eliminate ESC-delays
+"
+" If you experience delay with entering normal mode after pressing ESC, there's
+" fixes for this. There's a built-in delay because many keys (e.g arrows, ALT)
+" rely on it as a escape character.
+"
+" You can use 'set esckeys' to remove the delay, however this will break any
+" sequences using escape in insert mode. A better solution is to use a timeout.
+"
+" https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+"
+set timeoutlen=1000 ttimeoutlen=0
 
 
 " Plugin configuration
