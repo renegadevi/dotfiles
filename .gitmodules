@@ -1,0 +1,30 @@
+[submodule ".vim/bundle/TagHighlight"]
+	path = .vim/bundle/TagHighlight
+	url = http://github.com/vim-scripts/TagHighlight.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/python-syntax"]
+	path = .vim/bundle/python-syntax
+	url = http://github.com/hdima/python-syntax.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = http://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = http://github.com/majutsushi/tagbar.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = http://github.com/vim-airline/vim-airline.git
+[submodule ".vim/bundle/vim-airline-themes"]
+	path = .vim/bundle/vim-airline-themes
+	url = http://github.com/vim-airline/vim-airline-themes.git
+[submodule ".vim/bundle/vim-better-whitespace"]
+	path = .vim/bundle/vim-better-whitespace
+	url = http://github.com/ntpeters/vim-better-whitespace.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = http://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/vim-nerdtree-tabs"]
+	path = .vim/bundle/vim-nerdtree-tabs
+	url = http://github.com/jistr/vim-nerdtree-tabs.git
