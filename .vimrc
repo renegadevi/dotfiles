@@ -7,8 +7,8 @@
 "
 " File:     .vimrc
 " Author:   renegadevi <philip.andersen@codeofmagi.net>
-" Version:  2.0.1
-" Updated:  2016-08-06
+" Version:  2.0.2
+" Updated:  2016-08-07
 "
 
 
@@ -46,14 +46,16 @@ call pathogen#infect()
 set hidden
 
 
-" Enable syntax highlightning
+" Enable syntax highlighting
 "
 " The 'syntax enable' command will keep your current color settings. This
 " allows using ':highlight' commands to set  your preferred colors before or
 " after using this command. If you want Vim to overrule your settings with the
 " defaults, use 'syntax on' instead.
 "
-syntax enable
+if !exists("g:syntax_on")
+    syntax enable
+endif
 
 
 " Filetype detecting
@@ -120,19 +122,17 @@ set lazyredraw
 "
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
 scriptencoding utf-8
-set encoding=utf-8
 
 
 " Backup (Disable)
 "
-" nobackup   = Disable backup files (*.ext~)
-" nowb       = Do not create backup files while editing
-" noswapfile = Disable swap files (*.ext.swp)
+" nobackup      = Disable backup files (*.ext~)
+" nowritebackup = Do not create backup files while editing
+" noswapfile    = Disable swap files (*.ext.swp)
 "
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 
@@ -155,7 +155,7 @@ set shiftwidth=4
 "
 " 'autoindent'  = Copy the indentation from the previous line
 " 'smartindent' = Automatically inserts one extra indentation when needed
-" 'cindent'     = like 'smartindent', but more customizable and strict syntax
+" 'cindent'     = Like 'smartindent', but more customizable and strict syntax
 "
 " Generally, 'smartindent' or 'cindent' should only be set manually if you're
 " not satisfied with how file type based indentation works. When you open C/C++
@@ -164,18 +164,22 @@ set shiftwidth=4
 " Note: 'autoindent' does not interfere with other indentation settings, and
 " some file type based indentation scripts even enable it automatically.
 "
-set smartindent
+set autoindent
 
 
-" Text wrapping
+" Text/Word wrapping/break
 "
-" When enabled, lines longer then the with of the window will wrap and
-" displaying continues on the next line. When disabled, liked will not wrap
-" and only parts of longer lines will be displayed. Use 'textwidth' to set the
-" maximum width of text being inserted, when at sero value, it's disabled.
+" 'wrap'       = Lines longer then the width of window will visually wrap
+" 'textwidth'  = Maximum width of text that is being inserted.
+" 'linebreak'  = only wrap at a character in the breakat option
+"                (by default " ^I!@*-+;:,./?")
+" 'wrapmargin' = Number of characters from the right window border where
+"                wrapping starts.
 "
+"set wrapmargin
 set wrap
 set textwidth=80
+set linebreak
 
 
 " Color column
@@ -313,11 +317,6 @@ map <C-tab> :tabnext<CR>
 map <C-t> :tabnew<CR>
 map <C-w> :tabclose<CR>
 
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
 map <F12> :NERDTreeToggle<CR>
 
 nnoremap <space> za
@@ -425,9 +424,6 @@ set scrolloff=3
 set title
 
 
-
-
-
 " Color support (256 -> True Color)
 "
 " This first enables a more colored terminal, then if possible enables 24-bit
@@ -447,7 +443,7 @@ endif
 
 " Theme
 "
-" Customize and enhance Vim's appearence. Set default background color and
+" Customize and enhance Vim's appearance. Set default background color and
 " colorscheme.
 "
 set background=dark
@@ -456,7 +452,7 @@ colorscheme one
 
 " History
 "
-" By default. Vim only rememers the last 20 commands and search patterns
+" By default. Vim only remembers the last 20 commands and search patterns
 " entered. To extend this we can use the history command to set a value.
 "
 set history=1000
