@@ -12,7 +12,14 @@ Dotfiles for my nix/unix-computers
 - iTerm2 (3.0 +borderless-padding)
 - VIM (7.4 +python3)
 - Tmux (2.3)
-- Zsh (5.2 +oh-my-zsh)
+- Zsh (5.2)
+
+#### Zsh plugins
+- Oh-My-Zsh (https://github.com/robbyrussell/oh-my-zsh)
+- zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
+- zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
+- zsh-notify (https://github.com/marzocchi/zsh-notify)
+- enhancd (https://github.com/b4b4r07/enhancd)
 
 ### Terminal
 
