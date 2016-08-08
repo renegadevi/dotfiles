@@ -1,14 +1,17 @@
 #!/bin/sh
 
-echo "
-Note to ny self:
-- Install Zsh and Oh-My-Zsh first!
-"
+# bootstrap.sh
+#
+#  1. Enter which Github user's dotfiles to grab
+#  2. Backup (if) any pre-exiting dotfiles
+#  3. Clone dotfiles from user, ask for recursive.
+#  4. Symlink the new dotfiles to home folder
+#
 
 # Get user input
 echo -e "Github username: \c"; read username
+echo -e "Recursive clone? (y/n) \c"; read gitclone
 echo -e "Symlink dotfiles to home folder? (y/n) \c"; read symlink
-echo -e "Install zsh-syntax-highlighting? (y/n) \c"; read syntax
 
 # Backup pre-existing ~/dotfiles
 if [ -d ~/dotfiles ]; then
@@ -19,7 +22,11 @@ fi
 
 # Receive dotfiles from Github
 echo ".. Cloning dotfiles to ~/dotfiles"
-echo `git clone --recursive https://github.com/$username/dotfiles.git ~/dotfiles -q`
+if [ $gitclone == y ]; then
+    echo `git clone --recursive https://github.com/$username/dotfiles.git ~/dotfiles -q`
+else
+    echo `git clone https://github.com/$username/dotfiles.git ~/dotfiles -q`
+fi
 
 # Create symlinks
 if [ $symlink == y ]; then
@@ -31,9 +38,4 @@ if [ $symlink == y ]; then
             echo "$f ->  ~/$NAME"
         fi
     done
-fi
-
-# Install zsh-syntax-highlighting?
-if [ $syntax == y ]; then
-    echo `git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
 fi
