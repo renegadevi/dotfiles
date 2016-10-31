@@ -19,6 +19,13 @@ source $ZSH/oh-my-zsh.sh
 # Tmux
 if [ "$TMUX" != "" ]; then tmux; fi
 
+# Use newer version of VIM in OSX. This prevents reverting vim path to older
+# vim versions when updating OSX.
+if [ "$(uname)" == "Darwin" ]; then
+    alias vi='/usr/local/bin/vim'
+    alias vim='/usr/local/bin/vim'
+fi
+
 # Source some Zsh plugins
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggesions/zsh-autosuggestions.zsh
