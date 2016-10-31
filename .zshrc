@@ -31,3 +31,9 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggesions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/enhancd/init.sh
+
+# Prevent from some path issues when using multiple version of some software
+# in OSX.
+if [ "$(uname)" == "Darwin" ]; then
+    export PATH='/usr/local/bin:$PATH'
+fi
