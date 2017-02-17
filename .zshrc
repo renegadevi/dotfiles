@@ -17,7 +17,7 @@ export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local
 source $ZSH/oh-my-zsh.sh
 
 # Tmux
-if [ "$TMUX" != "" ]; then tmux; fi
+# if [ "$TMUX" != "" ]; then tmux; fi
 
 # Use newer version of VIM in OSX. This prevents reverting vim path to older
 # vim versions when updating OSX.
