@@ -1,14 +1,9 @@
 " .vimrc
 "
-" I created this .vimrc as a good skeleton for future use with good comment
-" guidence without requireing looking each command up. Some of these comments
-" has been written by me or by others that I found online that I added in. Any
-" suggestions or corrections is highly appriciated.
-"
 " File:     .vimrc
-" Author:   renegadevi <philip.andersen@codeofmagi.net>
-" Version:  2.0.2
-" Updated:  2016-08-07
+" Author:   Philip Andersen (renegadevi) <philip.andersen@codeofmagi.net>
+" Version:  2.1.0
+" Updated:  2017-02-26
 "
 
 
@@ -25,15 +20,29 @@
 set nocompatible
 
 
-" Plugin manager (Pathogen)
+" Plugin manager (Vim-plug)
 "
-" Manage your 'runtimepath' with ease. In practical terms, pathogen.vim makes
-" it super easy to install plugins and runtime files in their own private
-" directories. Just download or 'git clone' the plugin to (~/.vim/bundle).
+" Vim-plug is a minimalist Vim plugin manager with the fast parallel installer.
+" List plugins based on github user/repo alt. URL, then run :PlugInstall.
 "
-" https://github.com/tpope/vim-pathogen
+" https://github.com/junegunn/vim-plug
 "
-call pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'              " Filetree view for Vim
+Plug 'TagHighlight'                     " Extra highlightning
+Plug 'majutsushi/tagbar'                " Display tags, ordered by scope
+Plug 'scrooloose/syntastic'             " Syntax checking for Vim
+Plug 'kh3phr3n/python-syntax'           " Python syntax highlightning for Vim
+Plug 'vim-airline/vim-airline-themes'   " Themes for Airline
+Plug 'ntpeters/vim-better-whitespace'   " Highlight & strip trailing whitespace
+Plug 'jistr/vim-nerdtree-tabs'          " Use NERDTree and tabs together
+Plug 'tpope/vim-markdown'               " Markdown syntax highlightning
+Plug 'bling/vim-airline'                " Lean & mean status/tabline for Vim
+Plug 'junegunn/vim-emoji'               " Emoji in Vim
+Plug 'airblade/vim-gitgutter'           " Shows git diff in the gutter
+Plug 'glench/vim-jinja2-syntax'         " Up to date Jinja2 syntax
+Plug 'junegunn/goyo.vim'                " Distraction-free writing in Vim
+call plug#end()
 
 
 " Leave hidden buffers open
@@ -316,9 +325,7 @@ map <C-i> :tabnext<CR>
 map <C-tab> :tabnext<CR>
 map <C-t> :tabnew<CR>
 map <C-w> :tabclose<CR>
-
 map <F12> :NERDTreeToggle<CR>
-
 nnoremap <space> za
 
 
@@ -447,7 +454,7 @@ endif
 " colorscheme.
 "
 set background=dark
-colorscheme one
+colorscheme zenburn
 
 
 " History
@@ -500,8 +507,8 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Plugin configuration
 "
-" Additional personal preferences for some of the plugins I am using
+" Additional personal preferences for some of the plugins
 "
-let g:airline_theme='one'
+let g:airline_theme='base16_ocean'
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
