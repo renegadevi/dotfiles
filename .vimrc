@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'              " Filetree view for Vim
 Plug 'TagHighlight'                     " Extra highlightning
 Plug 'majutsushi/tagbar'                " Display tags, ordered by scope
-Plug 'scrooloose/syntastic'             " Syntax checking for Vim
+"Plug 'scrooloose/syntastic'             " Syntax checking for Vim
 Plug 'kh3phr3n/python-syntax'           " Python syntax highlightning for Vim
 Plug 'vim-airline/vim-airline-themes'   " Themes for Airline
 Plug 'ntpeters/vim-better-whitespace'   " Highlight & strip trailing whitespace
@@ -39,7 +39,7 @@ Plug 'jistr/vim-nerdtree-tabs'          " Use NERDTree and tabs together
 Plug 'tpope/vim-markdown'               " Markdown syntax highlightning
 Plug 'bling/vim-airline'                " Lean & mean status/tabline for Vim
 Plug 'junegunn/vim-emoji'               " Emoji in Vim
-Plug 'airblade/vim-gitgutter'           " Shows git diff in the gutter
+"Plug 'airblade/vim-gitgutter'           " Shows git diff in the gutter
 Plug 'glench/vim-jinja2-syntax'         " Up to date Jinja2 syntax
 Plug 'junegunn/goyo.vim'                " Distraction-free writing in Vim
 call plug#end()
