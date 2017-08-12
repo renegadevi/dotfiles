@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="terminalparty-modified"
+ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -17,23 +17,30 @@ export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local
 source $ZSH/oh-my-zsh.sh
 
 # Tmux
-# if [ "$TMUX" != "" ]; then tmux; fi
+#if [ "$TMUX" != "" ]; then tmux; fi
 
 # Use newer version of VIM in OSX. This prevents reverting vim path to older
 # vim versions when updating OSX.
-if [ "$(uname)" == "Darwin" ]; then
-    alias vi='/usr/local/bin/vim'
-    alias vim='/usr/local/bin/vim'
-fi
+#if [ "$(uname)" == "Darwin" ]; then
+#    alias vi='/usr/local/bin/vim'
+#    alias vim='/usr/local/bin/vim'
+#fi
 
 # Source some Zsh plugins
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggesions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.oh-my-zsh/custom/plugins/zsh-autosuggesions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/enhancd/init.sh
 
-# Prevent from some path issues when using multiple version of some software
-# in OSX.
-if [ "$(uname)" == "Darwin" ]; then
-    export PATH='/usr/local/bin:$PATH'
-fi
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
