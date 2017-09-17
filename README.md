@@ -2,7 +2,7 @@
 My dotfiles
 
 
-## Screenshot details
+## Details
 
 #### Zsh plugins
 - Oh-My-Zsh (https://github.com/robbyrussell/oh-my-zsh)
