@@ -1,8 +1,6 @@
 # Dotfiles
-Dotfiles for my nix/unix-computers
+My dotfiles
 
-## Screenshots
-![Screenshot1](https://gitlab.com/renegadevi/dotfiles/raw/master/Screenshot_01.png)
 
 ## Screenshot details
 
@@ -12,11 +10,10 @@ Dotfiles for my nix/unix-computers
 - zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
 - zsh-notify (https://github.com/marzocchi/zsh-notify)
 - enhancd (https://github.com/b4b4r07/enhancd)
+- zsh-completions (https://github.com/zsh-users/zsh-completions)
 
 ### Terminal
 - Font: 15pt Menlo Regular
-- Background: #2A2D35
-- Text color: #FFFFFF
-
-#### ANSI Colors
-base16_ocean.dark
+- Background: #3F3F3F
+- Foreground: #DCDCCC
+- Color scheme: Zenburn

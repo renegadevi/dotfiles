@@ -3,7 +3,7 @@
 " File:     .vimrc
 " Author:   Philip Andersen (renegadevi) <philip.andersen@codeofmagi.net>
 " Version:  2.1.0
-" Updated:  2017-02-26
+" Updated:  2017-09-12
 "
 
 
@@ -29,9 +29,7 @@ set nocompatible
 "
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'              " Filetree view for Vim
-Plug 'TagHighlight'                     " Extra highlightning
 Plug 'majutsushi/tagbar'                " Display tags, ordered by scope
-"Plug 'scrooloose/syntastic'             " Syntax checking for Vim
 Plug 'kh3phr3n/python-syntax'           " Python syntax highlightning for Vim
 Plug 'vim-airline/vim-airline-themes'   " Themes for Airline
 Plug 'ntpeters/vim-better-whitespace'   " Highlight & strip trailing whitespace
@@ -39,7 +37,6 @@ Plug 'jistr/vim-nerdtree-tabs'          " Use NERDTree and tabs together
 Plug 'tpope/vim-markdown'               " Markdown syntax highlightning
 Plug 'bling/vim-airline'                " Lean & mean status/tabline for Vim
 Plug 'junegunn/vim-emoji'               " Emoji in Vim
-"Plug 'airblade/vim-gitgutter'           " Shows git diff in the gutter
 Plug 'glench/vim-jinja2-syntax'         " Up to date Jinja2 syntax
 Plug 'junegunn/goyo.vim'                " Distraction-free writing in Vim
 call plug#end()
@@ -508,7 +505,4 @@ set timeoutlen=1000 ttimeoutlen=0
 " Plugin configuration
 "
 " Additional personal preferences for some of the plugins
-"
 let g:airline_theme='base16_ocean'
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0

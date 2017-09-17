@@ -26,13 +26,15 @@ source $ZSH/oh-my-zsh.sh
 #    alias vim='/usr/local/bin/vim'
 #fi
 
-# Source some Zsh plugins
+
+# Source some zsh plugins
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source ~/.oh-my-zsh/custom/plugins/zsh-autosuggesions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/enhancd/init.sh
 
+
+# Syntax color to man pages
 man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
