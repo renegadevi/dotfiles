@@ -2,16 +2,25 @@
 
 # bootstrap.sh
 #
-#  1. Enter which Github user's dotfiles to grab
-#  2. Backup (if) any pre-exiting dotfiles
-#  3. Clone dotfiles from user, ask for recursive.
-#  4. Symlink the new dotfiles to home folder
+#  1. Pick which git source to use
+#  2. Enter which Github user's dotfiles to grab
+#  3. Backup (if) any pre-exiting dotfiles
+#  4. Clone dotfiles from user, ask for recursive.
+#  5. Symlink the new dotfiles to home folder
 #
 
 # Get user input
-echo -e "Github username: \c"; read username
+echo -e "Gitlab(a) or Github(b)? (a/b): \c"; read gitsource
+echo -e "Repo user: \c"; read username
 echo -e "Recursive clone? (y/n) \c"; read gitclone
 echo -e "Symlink dotfiles to home folder? (y/n) \c"; read symlink
+
+# Define git source
+if [ $gitsource == a ]; then
+    gitsource='gitlab'
+elif [ $gitsource == b ]; then
+    gitsource='github'
+fi
 
 # Backup pre-existing ~/dotfiles
 if [ -d ~/dotfiles ]; then
@@ -23,9 +32,9 @@ fi
 # Receive dotfiles from Github
 echo ".. Cloning dotfiles to ~/dotfiles"
 if [ $gitclone == y ]; then
-    echo `git clone --recursive https://github.com/$username/dotfiles.git ~/dotfiles -q`
+    echo `git clone --recursive https://$gitsource.com/$username/dotfiles.git ~/dotfiles -q`
 else
-    echo `git clone https://github.com/$username/dotfiles.git ~/dotfiles -q`
+    echo `git clone https://$gitsource.com/$username/dotfiles.git ~/dotfiles -q`
 fi
 
 # Create symlinks
@@ -39,3 +48,6 @@ if [ $symlink == y ]; then
         fi
     done
 fi
+
+# End message
+echo "... done!"
