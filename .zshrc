@@ -38,5 +38,17 @@ alias vuepress-dev="clear;yarn docs:build && yarn docs:dev"
 alias "compose"="docker-compose down;clear;docker-compose config;docker-compose build;docker-compose up"
 alias "build"="docker-compose down;clear;docker-compose config;docker-compose build"
 
+# Rust commands
+PATH="$HOME/.cargo/bin:$PATH"
+alias "rust-run"="clear;time rustc main.rs;echo "===========================================================";./main"
+
+# VLC in terminal for MacOS
+if [ "$(uname)" = "Darwin" ]; then
+    alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+fi
+
+
 # Show uptime
 uptime | cut -d " " -f 3-
+
+
