@@ -1,5 +1,4 @@
-#export ZSH="/home/renegadevi/.oh-my-zsh"
-export ZSH="$HOME/renegadevi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="ys"
 DISABLE_UPDATE_PROMPT="true"
 export UPDATE_ZSH_DAYS=30
