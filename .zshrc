@@ -1,54 +1,58 @@
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="/home/renegadevi/.oh-my-zsh"
 ZSH_THEME="ys"
-plugins=(git git-extras pip github brew sudo python zsh-syntax-highlighting zsh-autosuggesions zsh-completions zsh-notify docker)
-export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:$HOME/bin"
+DISABLE_UPDATE_PROMPT="true"
+export UPDATE_ZSH_DAYS=30
+HIST_STAMPS="yyyy-mm-dd"
+
+# Plugins
+#plugins=(brew colored-man-pages command-not-found cp pip pyenv ripgrep rust yarn)
+
+## Extra ZSH plugins
+plugins=(brew colored-man-pages command-not-found cp pip pyenv ripgrep rust yarn fast-syntax-highlighting zsh-autosuggestions zsh-completions)
+# git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
 source $ZSH/oh-my-zsh.sh
 
-# Source some zsh plugins
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
-source ~/.oh-my-zsh/custom/plugins/enhancd/init.sh
+
+# With Extra ZSH plugins
+# git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 
-# Syntax color to man pages
-man() {
-    env \
-        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-        LESS_TERMCAP_md=$(printf "\e[1;31m") \
-        LESS_TERMCAP_me=$(printf "\e[0m") \
-        LESS_TERMCAP_se=$(printf "\e[0m") \
-        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-        LESS_TERMCAP_ue=$(printf "\e[0m") \
-        LESS_TERMCAP_us=$(printf "\e[1;32m") \
-            man "$@"
-}
+# Aliases
 
-# Youtube
+## youtube-dl
 alias youtube-dl-mp3="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
-alias youtube-to-mp3="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
 alias youtube-dl-mp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
-alias youtube-to-mp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
+alias youtube-dl-mp3-playlist="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o '%(playlist_index)02d - %(title)s.%(ext)s'"
 
-# Vuepress
-alias vuepress-build="clear;yarn docs:build"
-alias vuepress-dev="clear;yarn docs:build && yarn docs:dev"
+## ffmpeg
+alias video-loop="ffplay -loop 0"
+alias video-borderless="ffplay -noborder -left 0 -top 0"
 
-# Docker
-alias "compose"="docker-compose down;clear;docker-compose config;docker-compose build;docker-compose up"
-alias "build"="docker-compose down;clear;docker-compose config;docker-compose build"
+## podman
+alias podman-delete-containers="podman rm -fa"
+alias podman-delete-images="podman rmi -fa"
+alias podman-purge="podman system prune --all --force && podman rmi --all"
+alias podman-reset="podman system reset"
+alias podman-stop="podman stop -a"
+alias podman-stop-latest="podman stop -l"
 
-# Rust commands
+## vuepress
+alias vuepress-build="yarn docs:build"
+alias vuepress-dev="yarn docs:build && yarn docs:dev"
+
+## rust
 PATH="$HOME/.cargo/bin:$PATH"
-alias "rust-run"="clear;time rustc main.rs;echo "===========================================================";./main"
-
-# VLC in terminal for MacOS
-if [ "$(uname)" = "Darwin" ]; then
-    alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-fi
+alias rust-run="clear;time rustc main.rs;./main"
 
 
-# Show uptime
+# show uptime
 uptime | cut -d " " -f 3-
+
+
 
 
