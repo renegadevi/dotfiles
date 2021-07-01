@@ -45,6 +45,7 @@ set guicursor=i:ver25-iCursor
 set wildmenu
 set wildmode=list:longest,full
 set colorcolumn=80,120
+set backspace=indent,eol,start
 
 " iterm change I to [] depending on mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
