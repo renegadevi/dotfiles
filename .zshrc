@@ -36,5 +36,5 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-
-
+# --- Start commands
+uptime | cut -d " " -f 3-
