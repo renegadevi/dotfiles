@@ -1,57 +1,39 @@
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="ys"
-DISABLE_UPDATE_PROMPT="true"
-export UPDATE_ZSH_DAYS=30
+# --- Zsh history
 HIST_STAMPS="yyyy-mm-dd"
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=100000
 
-# Plugins
-#plugins=(brew colored-man-pages command-not-found cp pip pyenv ripgrep rust yarn)
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
 
-## Extra ZSH plugins
-plugins=(brew colored-man-pages command-not-found cp pip pyenv ripgrep rust yarn fast-syntax-highlighting zsh-autosuggestions zsh-completions)
-# git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+# --- Colored man pages
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
 
-source $ZSH/oh-my-zsh.sh
+# --- Key bidnings (Home/End/Del)
+bindkey "^[[H"  beginning-of-line
+bindkey "^[[F"  end-of-line
+bindkey "^[[3~" delete-char
 
+# --- Starship prompt
+eval "$(starship init zsh)"
 
-# With Extra ZSH plugins
-# git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+# --- Alias
+alias history="history 1"
+alias cls="clear"
+alias man="man -P less"
 
-
-# Aliases
-
-## youtube-dl
-alias youtube-dl-mp3="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
-alias youtube-dl-mp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
-alias youtube-dl-mp3-playlist="youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 -o '%(playlist_index)02d - %(title)s.%(ext)s'"
-
-## ffmpeg
-alias video-loop="ffplay -loop 0"
-alias video-borderless="ffplay -noborder -left 0 -top 0"
-
-## podman
-alias podman-delete-containers="podman rm -fa"
-alias podman-delete-images="podman rmi -fa"
-alias podman-purge="podman system prune --all --force && podman rmi --all"
-alias podman-reset="podman system reset"
-alias podman-stop="podman stop -a"
-alias podman-stop-latest="podman stop -l"
-
-## vuepress
-alias vuepress-build="yarn docs:build"
-alias vuepress-dev="yarn docs:build && yarn docs:dev"
-
-## rust
-PATH="$HOME/.cargo/bin:$PATH"
-alias rust-run="clear;time rustc main.rs;./main"
-
-
-# show uptime
-uptime | cut -d " " -f 3-
+# --- Zsh plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 
